@@ -99,7 +99,7 @@ const Navigation = (props: { textBlack: any; }) => {
         <div className="flex">
           <Link href="/" legacyBehavior passHref>
             <a>
-              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-20 w-fit mx-5" />
+              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-12 w-fit mx-5" />
             </a>
           </Link>
         </div>
