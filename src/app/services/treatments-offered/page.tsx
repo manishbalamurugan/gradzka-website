@@ -58,7 +58,7 @@ const diseases = [
     title: "Special Diets, Supplements, & Exercises",
     description: "Our comprehensive approach includes tailored nutrition and fitness plans, along with supplements, to promote optimal health and well-being. Designed to meet the unique needs of each patient, our programs focus on reducing inflammation, improving joint function, and enhancing overall quality of life through balanced diets, targeted exercises, and appropriate supplementation.",
     image: "https://www.nutrigility.com/wp-content/uploads/2020/09/Powder-and-pill-supplements-on-counter-with-shaker-ball.jpg"
-  },
+  }
 ];
 
 export default function Diseases() {
