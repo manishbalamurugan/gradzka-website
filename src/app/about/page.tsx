@@ -28,17 +28,17 @@ export default function About() {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="space-y-5">
-                <div className="text-center mb-16">
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black tracking-tight">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                <div className="text-center mb-6 sm:mb-8 md:mb-10">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-black tracking-tight">
                     Meet Dr. Gradzka
                   </h1>
-                  <div className="w-24 h-1 bg-black mx-auto mt-4"></div>
-                  <h2 className="text-2xl pt-10 pb-5 font-semibold tracking-loose">
+                  <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-black mx-auto mt-1 sm:mt-2 md:mt-3"></div>
+                  <h2 className="text-base sm:text-lg md:text-xl pt-4 sm:pt-5 md:pt-6 pb-2 sm:pb-3 md:pb-4 font-semibold tracking-loose">
                     Dedicated to Excellence in Rheumatology Care
                   </h2>
                 </div>
-                <p className="max-w-[600px] text-base sm:text-lg md:text-lg text-gray-700 mx-10">
+                <p className="max-w-[500px] text-xs sm:text-sm md:text-base text-gray-700 sm:mx-4 md:mx-10">
                   Dr. Margaret Gradzka was voted a top doctor by Washingtonian
                   Magazine in 2005, 2008, and 2010, and by Northern Virginia
                   Magazine in 2011. She is board certified in Rheumatology and
@@ -80,7 +80,7 @@ export default function About() {
               <img
                 src="assets/doctorgradzka.jpg"
                 alt="Dr. Margaret Gradzka"
-                className="rounded-lg object-cover w-[400px] h-auto transform transition duration-500 hover:scale-105 shadow-lg"
+                className=" -z-5 rounded-lg object-cover w-[400px] h-auto transform transition duration-500 hover:scale-105 shadow-lg"
               />
             </motion.div>
           </div>

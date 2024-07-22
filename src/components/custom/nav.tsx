@@ -84,7 +84,7 @@ const Navigation = (props: { textBlack: any; }) => {
     };
   
     return (
-      <div className="w-full py-2 px-4 backdrop-blur-sm flex justify-between items-center">
+      <div className="w-full py-2 px-4 backdrop-blur-sm flex justify-between items-center z-10">
         {/* Mobile menu icon */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="p-2 rounded-md focus:outline-none focus:ring">
@@ -99,7 +99,7 @@ const Navigation = (props: { textBlack: any; }) => {
         <div className="flex">
           <Link href="/" legacyBehavior passHref>
             <a>
-              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-10 w-fit mx-5" />
+              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-12 w-fit mx-5" />
             </a>
           </Link>
         </div>
