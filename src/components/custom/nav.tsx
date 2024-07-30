@@ -99,7 +99,7 @@ const Navigation = (props: { textBlack: any; }) => {
         <div className="flex">
           <Link href="/" legacyBehavior passHref>
             <a>
-              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-12 w-fit mx-5" />
+              <img src={props.textBlack ? "/assets/logo-color.png" : "/assets/logo.png"} alt="Logo" className="h-20 w-fit mx-5" />
             </a>
           </Link>
         </div>
@@ -110,7 +110,7 @@ const Navigation = (props: { textBlack: any; }) => {
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <span className={`${props.textBlack ? "text-black" : "text-white"}`}>About Us</span>
+                    <span className={`${props.textBlack ? "text-black" : "text-white"} text-sm`}>About Us</span>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -119,24 +119,24 @@ const Navigation = (props: { textBlack: any; }) => {
                   {item.href ? (
                     <Link href={item.href} legacyBehavior passHref>
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <span className={`${props.textBlack ? "text-black" : "text-white"}`}>{item.trigger}</span>
+                        <span className={`${props.textBlack ? "text-black" : "text-white"} text-sm`}>{item.trigger}</span>
                       </NavigationMenuLink>
                     </Link>
                   ) : (
                     <>
-                      <NavigationMenuTrigger className={`${props.textBlack ? "text-black" : "text-white"}`}>{item.trigger}</NavigationMenuTrigger>
+                      <NavigationMenuTrigger className={`${props.textBlack ? "text-black" : "text-white"} text-sm`}>{item.trigger}</NavigationMenuTrigger>
                       <NavigationMenuContent className="min-w-[500px] min-h-[200px] absolute inline-block">
                         <ul className={`grid gap-3 p-4 ${item.content.length <= 2 ? "grid-cols-1" : "grid-cols-2"} mx-auto`}>
                           {item.content.map((link) => (
-                            <li key={link.href} className={`${item.content.length < 2 ? "col-span-1" : "col-span-2 lg:col-span-1"}`}>
+                            <li key={link.href} className={`${item.content.length < 2 ? "col-span-1" : "col-span-2 lg:col-span-1 text-m"}`}>
                               <NavigationMenuLink asChild>
                                 <a
                                   href={link.href}
                                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none hover:bg-gray-100 focus:text-accent-foreground"
                                   download={link.download ? true : undefined}
                                 >
-                                  <div className="text-sm font-medium leading-none">{link.title}</div>
-                                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{link.description}</p>
+                                  <div className="text-sm font-medium leading-none text-sm">{link.title}</div>
+                                  <p className="line-clamp-2 leading-snug text-muted-foreground text-sm">{link.description}</p>
                                 </a>
                               </NavigationMenuLink>
                             </li>

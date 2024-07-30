@@ -13,79 +13,9 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen font-ui-sans-serif">
       <Navigation textBlack={true} />
-      <motion.section 
-        className="py-16 bg-blue-50/20" 
-        id="meet"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="container">
-          <div className="flex flex-wrap justify-around items-center w-full">
-            <motion.div 
-              className="w-full md:w-1/2 space-y-4"
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="space-y-2 sm:space-y-3 md:space-y-4">
-                <div className="text-center mb-6 sm:mb-8 md:mb-10">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-black tracking-tight">
-                    Meet Dr. Gradzka
-                  </h1>
-                  <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-black mx-auto mt-1 sm:mt-2 md:mt-3"></div>
-                  <h2 className="text-base sm:text-lg md:text-xl pt-4 sm:pt-5 md:pt-6 pb-2 sm:pb-3 md:pb-4 font-semibold tracking-loose">
-                    Dedicated to Excellence in Rheumatology Care
-                  </h2>
-                </div>
-                <p className="max-w-[500px] text-xs sm:text-sm md:text-base text-gray-700 sm:mx-4 md:mx-10">
-                  Dr. Margaret Gradzka was voted a top doctor by Washingtonian
-                  Magazine in 2005, 2008, and 2010, and by Northern Virginia
-                  Magazine in 2011. She is board certified in Rheumatology and
-                  Internal Medicine, with a focus on inflammatory conditions,
-                  autoimmune diseases, and integrative therapies for chronic
-                  joint pain.
-                </p>
-              </div>
-              <ul className="space-y-2 text-base sm:text-lg md:text-lg text-gray-700 mx-10">
-                <li>
-                  <strong>Education:</strong> MD degree - Warsaw Medical School,
-                  Poland
-                </li>
-                <li>
-                  <strong>Internship and Residency:</strong> St. Luke's Hospital
-                  - Bethlehem, PA
-                </li>
-                <li>
-                  <strong>Fellowship:</strong> Yale University - New Haven, CT
-                </li>
-                <li>
-                  <strong>Professional Distinctions:</strong> Fellow of American
-                  College of Rheumatology, American Medical Association,
-                  Virginia Rheumatology Society
-                </li>
-                <li>
-                  <strong>Special Procedures/Techniques:</strong> Ultrasound
-                  guidance, Platelets Rich Plasma (PRP), Non-surgical treatment
-                  for Carpal Tunnel Syndrome
-                </li>
-              </ul>
-            </motion.div>
-            <motion.div 
-              className="w-full md:w-1/2 flex justify-center items-center"
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src="assets/doctorgradzka.jpg"
-                alt="Dr. Margaret Gradzka"
-                className=" -z-5 rounded-lg object-cover w-[400px] h-auto transform transition duration-500 hover:scale-105 shadow-lg"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
+      <div className="w-full bg-indigo-700 text-white py-4 px-6 mt-5">
+        <h1 className="text-3xl font-medium">Dedicated to Excellence in Rheumatology Care</h1>
+      </div>
       <motion.section
         className="bg-blue-50 relative flex flex-1 w-full h-full"
         id="hero"
@@ -95,14 +25,14 @@ export default function About() {
       >
         <div className="relative z-10 flex flex-1 grid grid-cols-1">
           <div className="container mx-auto my-20 md:my-30 max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="flex w-full md:flex-row items-center justify-between">
               <motion.div 
-                className="w-full md:w-1/2 space-y-6"
+                className="w-full items-center space-y-6"
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="ml-2 text-4xl md:text-5xl lg:text-6xl font-extrabold text-center md:text-left text-indigo-700">
+                <h1 className="ml-2 mx-auto w-full text-4xl md:text-5xl lg:text-6xl font-extrabold text-center md:text-left text-indigo-700">
                   Mission & Values
                 </h1>
                 <p className="text-base sm:text-lg md:text-lg font-medium text-gray-700 ml-3">
@@ -114,122 +44,74 @@ export default function About() {
                   best possible outcomes.
                 </p>
               </motion.div>
-              <motion.div 
-                className="w-full md:w-1/2 flex justify-center"
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <img
-                  src="https://drgradzka.com/assets/img/contact-building.png"
-                  alt="Our Mission"
-                  className="rounded-xl shadow-lg max-w-full h-auto transform transition duration-500 hover:scale-105"
-                />
-              </motion.div>
             </div>
           </div>
         </div>
       </motion.section>
       <motion.section 
         className="py-16 bg-blue-50/20" 
-        id="mission"
+        id="meet"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-around items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-around items-center w-full">
             <motion.div 
-              className="w-full md:w-1/2 space-y-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="space-y-5">
-                <motion.div 
-                  className="inline-block rounded-lg bg-stone-400 px-3 py-1 mb-3 text-lg text-white"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  Our Mission
-                </motion.div>
-                <motion.h2 
-                  className="text-2xl pb-2 font-bold tracking-loose sm:text-3xl"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  Dedicated to Excellence in Rheumatology Care
-                </motion.h2>
-                <motion.p 
-                  className="max-w-[600px] text-base sm:text-md md:text-lg text-gray-700"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  At Advanced Arthritis Solutions, we are committed to providing
-                  the highest quality care for our patients. Our mission is to
-                  improve the lives of those suffering from rheumatic diseases
-                  through innovative and personalized treatments.
-                </motion.p>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="flex justify-center items-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="w-full md:w-1/2 flex justify-center items-center mb-8 md:mb-0"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
               <img
-                src="https://images.pexels.com/photos/4262010/pexels-photo-4262010.jpeg?cs=srgb&dl=pexels-august-de-richelieu-4262010.jpg&fm=jpg"
-                alt="Our Mission"
-                className="rounded-lg object-cover w-[500px] h-auto"
-              />
-            </motion.div>
-          </div>
-        </div>
-        <div className="container py-10 mt-10 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-around items-center">
-            <motion.div 
-              className="flex justify-center items-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src="https://media.istockphoto.com/id/1049858904/photo/rear-view-of-family-standing-at-top-of-hill-on-hike-through-countryside-in-lake-district-uk.jpg?s=612x612&w=0&k=20&c=eiiL682xNhJ3q1kqlrVr-aobUeBhmSMpoS8qo3gbSPs="
-                alt="Our Mission"
-                className="rounded-lg object-cover w-[500px] h-auto"
+                src="assets/doctorgradzka.jpg"
+                alt="Dr. Margaret Gradzka"
+                className="rounded-lg object-cover w-full max-w-[300px] h-auto transform transition duration-500 hover:scale-105 shadow-xl"
               />
             </motion.div>
             <motion.div 
-              className="w-full md:w-1/2 space-y-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="w-full md:w-1/2 space-y-6"
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="space-y-5">
-                <motion.h2 
-                  className="text-2xl pb-2 font-bold tracking-loose sm:text-3xl"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  Pioneering Rheumatology Care
-                </motion.h2>
-                <motion.p 
-                  className="max-w-[600px] text-base sm:text-md md:text-lg text-gray-700"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  At Advanced Arthritis Solutions, we dedicate ourselves to
-                  pioneering care for those with rheumatic conditions. Our
-                  vision is to transform lives through advanced, individualized
-                  treatment strategies.
-                </motion.p>
+              <div className="space-y-4">
+                <div className="text-center md:text-left mb-6">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-700 tracking-tight">
+                    Meet Dr. Gradzka
+                  </h1>
+                  <div className="w-20 h-1 bg-indigo-500 mt-3 mx-auto md:mx-0"></div>
+                </div>
+                <p className="text-base sm:text-lg text-gray-700">
+                  Dr. Margaret Gradzka, a distinguished rheumatologist, has been recognized as a top doctor by Washingtonian
+                  Magazine and Northern Virginia Magazine. Board certified in Rheumatology and
+                  Internal Medicine, she specializes in inflammatory conditions,
+                  autoimmune diseases, and integrative therapies for chronic
+                  joint pain.
+                </p>
               </div>
+              <ul className="space-y-3 text-base sm:text-lg text-gray-700">
+                <li className="flex items-center">
+                  <MedalIcon className="mr-2 text-indigo-600 w-6 h-6" />
+                  <span className="text-base"><strong>Education:</strong> MD degree - Warsaw Medical School, Poland</span>
+                </li>
+                <li className="flex items-center">
+                  <MedalIcon className="mr-2 text-indigo-600 w-6 h-6" />
+                  <span className="text-base"><strong>Internship and Residency:</strong> St. Luke's Hospital - Bethlehem, PA</span>
+                </li>
+                <li className="flex items-center pb-5">
+                  <MedalIcon className="mr-2 text-indigo-600 w-6 h-6" />
+                  <span className="text-base"><strong>Fellowship:</strong> Yale University - New Haven, CT</span>
+                </li>
+                <li className="flex items-center">
+                  <MedalIcon className="mr-2 text-indigo-600 w-6 h-6" />
+                  <span className="text-base text-xs"><strong>Professional Distinctions:</strong> Fellow of American College of Rheumatology, American Medical Association, Virginia Rheumatology Society</span>
+                </li>
+                <li className="flex items-center">
+                  <MedalIcon className="mr-2 text-indigo-600 w-6 h-6" />
+                  <span className="text-base text-xs"><strong>Special Procedures:</strong> Ultrasound guidance, Platelets Rich Plasma (PRP), Non-surgical treatment for Carpal Tunnel Syndrome</span>
+                </li>
+              </ul>
             </motion.div>
           </div>
         </div>

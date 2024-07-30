@@ -50,8 +50,8 @@ export default function Home() {
                 </div>
             </div>
         </section>
-        <section className="bg-white py-16" id="about">
-          <div className="container mx-auto px-4 md:px-12">
+        <section className="bg-blue-50/75 py-16" id="about">
+          <div className="container  mx-auto px-4 md:px-12">
             <motion.div 
               className="text-center mb-12"
               initial={{ opacity: 0, y: 50 }}
@@ -85,14 +85,14 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-blue-50/75 relative" id="services">
+        <section className="relative" id="services">
           <div className="pt-16 pb-8 min-h-[300px] justify-center items-center relative">
             <div className="w-full h-full relative z-10 px-10">
               <ServicesSection/>
             </div>
           </div>
         </section>
-        <section className="py-16 bg-blue-50/20" id="contact">
+        <section className="py-10 bg-blue-50/75" id="contact">
           <div className="container px-4 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div 
@@ -106,26 +106,34 @@ export default function Home() {
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h2>
                 <p className="max-w-[600px] md:text-xl text-gray-700">If you have any questions or would like to schedule an appointment, please feel free to contact us. We look forward to hearing from you.</p>
-                <div className="pt-[1rem]">
-                  <h3 className="text-2xl font-bold">Advanced Arthritis Solutions</h3>
-                  <p>3620 Joseph Siewick Drive, Suite 200</p>
-                  <p>Fairfax, VA 22033</p>
-                  <p>Tel: (703) 648-9800</p>
-                  <p>Fax: (703) 648-9898</p>
-                  <p>Email: drgradzka.office@gmail.com</p>
-                </div>
+                <motion.form 
+                  className="space-y-4 my-2 w-3/4"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Input id="name" placeholder="Your Name" required />
+                  <Input id="email" placeholder="Your Email" required type="email" />
+                  <Textarea className="" id="message" placeholder="Your Message" required />
+                  <Button type="submit">Submit</Button>
+                </motion.form>
               </motion.div>
-              <motion.form 
-                className="space-y-4 py-10 mt-10"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Input id="name" placeholder="Your Name" required />
-                <Input id="email" placeholder="Your Email" required type="email" />
-                <Textarea className="" id="message" placeholder="Your Message" required />
-                <Button type="submit">Submit</Button>
-              </motion.form>
+              <div id="contact" className="mt-[4rem] text-sm">
+                <h3 className="text-2xl font-bold">Advanced Arthritis Solutions</h3>
+                <p>3620 Joseph Siewick Drive, Suite 200</p>
+                <p>Fairfax, VA 22033</p>
+                <p className="mt-5">Tel: (703) 648-9800</p>
+                <p>Fax: (703) 648-9898</p>
+                <p className="mb-5">Email: drgradzka.office@gmail.com</p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.143547850579!2d-77.366353684653!3d38.8776612795703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64b1e8e7a9a7d%3A0x1f7f9bcb4c6c1f40!2s3620%20Joseph%20Siewick%20Dr%20STE%20200%2C%20Fairfax%2C%20VA%2022033%2C%20USA!5e0!3m2!1sen!2sus!4v1667493628554!5m2!1sen!2sus"
+                  width="400"
+                  height="350"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </section>

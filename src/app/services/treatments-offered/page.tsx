@@ -72,7 +72,10 @@ export default function Diseases() {
   return (
     <div className="flex flex-col min-h-screen font-ui-sans-serif bg-gray-50">
       <Navigation textBlack={true} />
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-8" id="diseases">
+      <div className="w-full bg-indigo-700 text-white py-4 px-6 mt-5">
+        <h1 className="text-3xl font-medium">Treatment Types</h1>
+      </div>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-2" id="diseases">
         <div className="w-full md:w-1/4 p-4 bg-white shadow-md rounded-lg">
           <input
             type="text"
@@ -85,7 +88,7 @@ export default function Diseases() {
             {filteredDiseases.map((disease) => (
               <li
                 key={disease.href}
-                className={`p-2 cursor-pointer rounded ${activeDisease === disease ? "bg-blue-100" : ""}`}
+                className={`p-2 cursor-pointer rounded ${activeDisease === disease ? "bg-blue-100" : ""} hover:bg-blue-50`}
                 onClick={() => setActiveDisease(disease)}
               >
                 {disease.title}
@@ -96,14 +99,18 @@ export default function Diseases() {
         <div className="w-full md:w-3/4 p-4 bg-white shadow-md rounded-lg">
           {activeDisease ? (
             <div className="p-6">
-              <h2 className="text-2xl font-bold mb-2 text-blue-900">{activeDisease.title}</h2>
-              <img src={activeDisease.image} alt={activeDisease.title} className="w-96 h-96 object-cover mb-4 rounded" />
-              <p className="text-gray-700 mb-4">{activeDisease.description}</p>
-              <Link href={activeDisease.href} legacyBehavior>
-                <a className="text-indigo-600 hover:text-indigo-800 font-semibold">
-                  Learn More
-                </a>
-              </Link>
+              <h2 className="text-2xl font-bold mb-5 text-blue-900">{activeDisease.title}</h2>
+              <div className="flex flex-wrap">
+                <img src={activeDisease.image} alt={activeDisease.title} className="w-96 h-96 object-cover mb-4 rounded mr-4" />
+                <p className="text-gray-700 mb-4 flex-1">
+                  {activeDisease.description}
+                  <Link href={activeDisease.href} legacyBehavior>
+                    <a className="text-indigo-600 hover:text-indigo-800 font-semibold ml-2">
+                      Learn More →
+                    </a>
+                  </Link>
+                </p>
+              </div>
             </div>
           ) : (
             <div className="flex flex-col justify-center items-center h-full bg-blue-50 p-6 rounded-lg shadow-md">
