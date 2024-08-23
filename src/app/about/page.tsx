@@ -64,7 +64,7 @@ export default function About() {
               transition={{ duration: 0.5 }}
             >
               <img
-                src="assets/doctorgradzka.jpg"
+                src="assets/office/images/Gradzka.jpg"
                 alt="Dr. Margaret Gradzka"
                 className="rounded-lg object-cover w-full max-w-[300px] h-auto transform transition duration-500 hover:scale-105 shadow-xl"
               />

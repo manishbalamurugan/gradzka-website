@@ -1,6 +1,5 @@
 "use client"
 
-
 import React, { useState } from "react";
 import Link from "next/link";
 import Navigation from "@/components/custom/nav";
@@ -133,15 +132,16 @@ export default function Diseases() {
   return (
     <div className="flex flex-col min-h-screen font-ui-sans-serif bg-gray-50">
       <Navigation textBlack={true} />
-      <div className="w-full bg-indigo-700 text-white py-4 px-6 mt-5">
-        <h1 className="text-3xl font-medium">Diseases We Treat</h1>
-      </div>
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-2" id="diseases">
+      <header className="w-full bg-indigo-700 text-white py-8 px-6">
+        <h1 className="text-4xl font-bold text-center">Diseases We Treat</h1>
+        <p className="text-lg text-center mt-2">Comprehensive care for a wide range of conditions</p>
+      </header>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-8" id="diseases">
         <div className="w-full md:w-1/4 p-4 bg-white shadow-md rounded-lg max-h-[60vh] overflow-y-auto">
           <input
             type="text"
             placeholder="Search..."
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -149,30 +149,30 @@ export default function Diseases() {
             {filteredDiseases.map((disease) => (
               <li
                 key={disease.href}
-                className={`p-2 cursor-pointer rounded ${activeDisease === disease ? "bg-blue-100" : ""} hover:bg-blue-50`}
+                className={`p-3 cursor-pointer rounded-lg border ${activeDisease === disease ? "bg-blue-100 border-blue-300" : "border-gray-200"} hover:bg-blue-50`}
                 onClick={() => setActiveDisease(disease)}
               >
-                {disease.title}
+                <div className="font-semibold text-gray-800">{disease.title}</div>
               </li>
             ))}
           </ul>
         </div>
         <div className="w-full md:w-3/4 p-4 bg-white shadow-md rounded-lg">
           {activeDisease ? (
-             <div className="p-6">
-             <h2 className="text-2xl font-bold mb-5 text-blue-900">{activeDisease.title}</h2>
-             <div className="flex flex-wrap">
-               <img src={activeDisease.image} alt={activeDisease.title} className="w-96 h-96 object-cover mb-4 rounded mr-4" />
-               <p className="text-gray-700 mb-4 flex-1">
-                 {activeDisease.description}
-                 <Link href={activeDisease.href} legacyBehavior>
-                   <a className="text-indigo-600 hover:text-indigo-800 font-semibold ml-2">
-                     Learn More →
-                   </a>
-                 </Link>
-               </p>
-             </div>
-           </div>
+            <div className="p-6">
+              <h2 className="text-3xl font-bold mb-5 text-blue-900">{activeDisease.title}</h2>
+              <div className="flex flex-col md:flex-row">
+                <img src={activeDisease.image} alt={activeDisease.title} className="w-full md:w-1/2 h-auto object-cover mb-4 rounded mr-4" />
+                <p className="text-gray-700 mb-4 flex-1">
+                  {activeDisease.description}
+                  <Link href={activeDisease.href} legacyBehavior>
+                    <a className="text-indigo-600 hover:text-indigo-800 font-semibold ml-2">
+                      Learn More →
+                    </a>
+                  </Link>
+                </p>
+              </div>
+            </div>
           ) : (
             <div className="flex flex-col justify-center items-center h-full bg-blue-50 p-6 rounded-lg shadow-md">
               <p className="text-2xl font-bold text-center text-blue-900 mb-4">
@@ -180,6 +180,25 @@ export default function Diseases() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">Why Choose Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Expert Care</h3>
+              <p className="text-gray-700">Our team of specialists is dedicated to providing the highest quality care for a wide range of conditions.</p>
+            </div>
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Personalized Treatment</h3>
+              <p className="text-gray-700">We create customized treatment plans tailored to each patient's unique needs and lifestyle.</p>
+            </div>
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">State-of-the-Art Therapies</h3>
+              <p className="text-gray-700">We utilize the latest advancements in medical technology to provide effective and innovative treatments.</p>
+            </div>
+          </div>
         </div>
       </section>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full items-center px-4 md:px-6 border-t bg-blue-50/50">

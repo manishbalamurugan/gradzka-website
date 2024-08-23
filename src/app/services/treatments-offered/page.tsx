@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navigation from "@/components/custom/nav";
 
-const diseases = [
+const treatments = [
   {
     href: "/services/infusion-center",
     title: "State of the Art Infusion Center",
@@ -61,50 +61,51 @@ const diseases = [
   }
 ];
 
-export default function Diseases() {
-  const [activeDisease, setActiveDisease] = useState(diseases[0]);
+export default function Treatments() {
+  const [activeTreatment, setActiveTreatment] = useState(treatments[0]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredDiseases = diseases.filter((disease) =>
-    disease.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredTreatments = treatments.filter((treatment) =>
+    treatment.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="flex flex-col min-h-screen font-ui-sans-serif bg-gray-50">
       <Navigation textBlack={true} />
-      <div className="w-full bg-indigo-700 text-white py-4 px-6 mt-5">
-        <h1 className="text-3xl font-medium">Treatment Types</h1>
-      </div>
-      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-2" id="diseases">
-        <div className="w-full md:w-1/4 p-4 bg-white shadow-md rounded-lg">
+      <header className="w-full bg-indigo-700 text-white py-8 px-6">
+        <h1 className="text-4xl font-bold text-center">Treatment Types</h1>
+        <p className="text-lg text-center mt-2">Explore our wide range of treatment options</p>
+      </header>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20 flex flex-col md:flex-row gap-8" id="treatments">
+        <div className="w-full md:w-1/4 p-4 bg-white shadow-md rounded-lg max-h-[60vh] overflow-y-auto">
           <input
             type="text"
             placeholder="Search..."
-            className="w-full p-2 mb-4 border rounded"
+            className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <ul className="space-y-2">
-            {filteredDiseases.map((disease) => (
+            {filteredTreatments.map((treatment) => (
               <li
-                key={disease.href}
-                className={`p-2 cursor-pointer rounded ${activeDisease === disease ? "bg-blue-100" : ""} hover:bg-blue-50`}
-                onClick={() => setActiveDisease(disease)}
+                key={treatment.href}
+                className={`p-3 cursor-pointer rounded-lg border ${activeTreatment === treatment ? "bg-blue-100 border-blue-300" : "border-gray-200"} hover:bg-blue-50`}
+                onClick={() => setActiveTreatment(treatment)}
               >
-                {disease.title}
+                <div className="font-semibold text-gray-800">{treatment.title}</div>
               </li>
             ))}
           </ul>
         </div>
         <div className="w-full md:w-3/4 p-4 bg-white shadow-md rounded-lg">
-          {activeDisease ? (
+          {activeTreatment ? (
             <div className="p-6">
-              <h2 className="text-2xl font-bold mb-5 text-blue-900">{activeDisease.title}</h2>
-              <div className="flex flex-wrap">
-                <img src={activeDisease.image} alt={activeDisease.title} className="w-96 h-96 object-cover mb-4 rounded mr-4" />
+              <h2 className="text-3xl font-bold mb-5 text-blue-900">{activeTreatment.title}</h2>
+              <div className="flex flex-col md:flex-row">
+                <img src={activeTreatment.image} alt={activeTreatment.title} className="w-full md:w-1/2 h-auto object-cover mb-4 rounded mr-4" />
                 <p className="text-gray-700 mb-4 flex-1">
-                  {activeDisease.description}
-                  <Link href={activeDisease.href} legacyBehavior>
+                  {activeTreatment.description}
+                  <Link href={activeTreatment.href} legacyBehavior>
                     <a className="text-indigo-600 hover:text-indigo-800 font-semibold ml-2">
                       Learn More →
                     </a>
@@ -119,6 +120,44 @@ export default function Diseases() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">Our Approach</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Comprehensive Care</h3>
+              <p className="text-gray-700">We provide a holistic approach to treatment, addressing all aspects of patient health and well-being.</p>
+            </div>
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Innovative Treatments</h3>
+              <p className="text-gray-700">Our clinic utilizes the latest medical advancements to offer cutting-edge treatments for various conditions.</p>
+            </div>
+            <div className="p-6 bg-blue-50 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Patient-Centered Approach</h3>
+              <p className="text-gray-700">We prioritize patient comfort and satisfaction, ensuring personalized care plans tailored to individual needs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-blue-50/20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">Testimonials</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <p className="text-gray-700 mb-4">"The care I received at this clinic was exceptional. The staff was attentive and the treatments were highly effective."</p>
+              <p className="text-blue-900 font-semibold">- Patient A</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <p className="text-gray-700 mb-4">"I am so grateful for the personalized treatment plan that has significantly improved my quality of life."</p>
+              <p className="text-blue-900 font-semibold">- Patient B</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <p className="text-gray-700 mb-4">"The innovative therapies offered here have made a huge difference in managing my condition."</p>
+              <p className="text-blue-900 font-semibold">- Patient C</p>
+            </div>
+          </div>
         </div>
       </section>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full items-center px-4 md:px-6 border-t bg-blue-50/50">
